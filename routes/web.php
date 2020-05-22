@@ -13,4 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+\Illuminate\Support\Facades\Auth::routes();
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('questions', 'QuestionsController');
+});

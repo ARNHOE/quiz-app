@@ -9,7 +9,7 @@
     <body>
         <div id="app">
             <div class="container mx-auto">
-                test
+                {{ $questions->pluck('title') }}
             </div>
         </div>
         <script src="{{ mix('/js/app.js') }}"></script>
